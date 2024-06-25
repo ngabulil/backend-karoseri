@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 100%;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .content {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #0073e6;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .body {
+            padding: 20px;
+        }
+        .body h2 {
+            color: #333333;
+        }
+        .body p {
+            color: #555555;
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #f4f4f4;
+            color: #888888;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+        @media (max-width: 600px) {
+            .content {
+                width: 100%;
+            }
+            .header, .body, .footer {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <h1>Karoseri</h1>
+            </div>
+            <div class="body">
+                <h2>Hello, {{ name }}</h2>
+                <p>Pesan anda telah dikirim</p>
+                <p>Kami akan sesegera mungkin untuk menghubungi anda melalui Whatsapp atau email yang dicantumkan</p>
+                <p>Terima kasih telah menghubungi kami</p>
+                <p>Salam,<br>Admin Karoseri</p>
+            </div>
+            <div class="footer">
+                <p><a href="https://test-skripsi-yoga-ulil.netlify.app/" target="_blank">Website Karoseri</a>.</p>
+                <p>© 2024 Karoseri. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

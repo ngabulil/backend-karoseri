@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 100%;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .content {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #0073e6;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .body {
+            padding: 20px;
+        }
+
+        .body h2 {
+            color: #333333;
+        }
+
+        .body p {
+            color: #555555;
+            line-height: 1.6;
+        }
+
+        .details {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .details p {
+            margin: 5px 0;
+        }
+
+        .footer {
+            background-color: #f4f4f4;
+            color: #888888;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                width: 100%;
+            }
+
+            .header,
+            .body,
+            .footer {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <h1>Karoseri</h1>
+            </div>
+            <div class="body">
+                <h2>Hallo, Admin</h2>
+                <p>Kamu memiliki pesan baru:</p>
+                <div class="details">
+                    <p><strong>Nama:</strong> {{ name }}</p>
+                    <p><strong>Email:</strong> {{ email }}</p>
+                    <p><strong>No. HP:</strong> {{ phone }}</p>
+                    <p><strong>Link:</strong> <a href="{{ link_product }}" target="_blank">{{ link_product }}</a></p>
+                    <p><strong>Message:</strong> {{ message }}</p>
+                </div>
+                <p>Mohon segera membalas pesan ini melalui Email atau No HP yang tercantum.</p>
+            </div>
+            <div class="footer">
+                <p><a href="https://test-skripsi-yoga-ulil.netlify.app/" target="_blank">Website Karoseri</a></p>
+                <p>© 2024 Karoseri. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
