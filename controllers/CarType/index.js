@@ -1,5 +1,6 @@
 const { customRes } = require('../../utils/responseUtil')
 const CarType = require('../../models/CarType')
+const { Op } = require('sequelize')
 
 const createType = async (req, res) => {
     try {
@@ -53,6 +54,17 @@ const deleteType = async (req, res) => {
 
 const getAllType = async (req, res) => {
     try {
+        const { name } = req.query
+        if (name) {
+            const carTypes = await CarType.findAll({
+                where: {
+                    name: {
+                        [Op.like]: `%${name}%`
+                    }
+                }
+            });
+            return customRes(res, 200, 'car types retrieved', carTypes.map((carType) => carType.dataValues))
+        }
         const carTypes = await CarType.findAll()
         return customRes(res, 200, 'car types retrieved', carTypes.map((carType) => carType.dataValues))
     } catch (error) {

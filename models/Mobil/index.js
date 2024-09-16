@@ -34,12 +34,17 @@ const Mobil = db.define('cars', {
         allowNull: false
     },
     spec_table: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false
     },
     images: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false
+    },
+    is_fav: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
     }
 });
 

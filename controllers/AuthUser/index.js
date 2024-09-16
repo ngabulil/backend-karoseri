@@ -9,13 +9,18 @@ const {
     generateAccessToken,
     generateRefreshToken
 } = require('../../utils/tokenUtil');
+const { secretRegist } = require('../../config/secret');
 
 const register = async (req, res) => {
     try {
         const {
             username,
-            password
+            password,
+            secret,
         } = req.body;
+        if (!secret || secret !== secretRegist) {
+            return customRes(res, 400, 'invalid secret');
+        }
         if (!username || !password) {
             return customRes(res, 400, 'username or password are required');
         }
